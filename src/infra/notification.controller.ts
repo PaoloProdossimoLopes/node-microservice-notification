@@ -1,20 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { IsNotEmpty, IsUUID, Length } from 'class-validator';
 import { randomUUID } from 'crypto';
+import { CreateNotificationBody } from './create-notification-body';
 import { PrismaService } from './prisma.service';
-
-class CreateNotificationBody {
-  @IsUUID()
-  @IsNotEmpty()
-  recipientId: string;
-
-  @IsNotEmpty()
-  @Length(5, 240)
-  content: string;
-
-  @IsNotEmpty()
-  category: string;
-}
 
 @Controller('/notifications')
 export class NotificationController {
