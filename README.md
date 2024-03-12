@@ -2,6 +2,8 @@
 
 This is a Node.js microservice built with NestJS, TypeScript, and Prisma for efficient notification management. It supports creating, reading, unreading, canceling, and listing notifications for users, as well as counting a user's notifications.
 
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Node%20Notifications%20microservice&uri=https%3A%2F%2Fgithub.com%2FPaoloProdossimoLopes%2Fnode-microservice-notification%2Fblob%2Fmain%2FInsomnia.json)
+
 ## Features
 
 - Create notifications
