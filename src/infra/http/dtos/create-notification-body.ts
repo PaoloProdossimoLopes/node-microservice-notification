@@ -1,14 +1,14 @@
 import { IsNotEmpty, IsUUID, Length } from 'class-validator';
 
-export abstract class CreateNotificationBody {
+export class CreateNotificationBody {
   @IsUUID()
   @IsNotEmpty()
-  abstract recipientId: string;
+  recipientId: string;
 
   @IsNotEmpty()
   @Length(5, 240)
-  abstract content: string;
+  content: string;
 
   @IsNotEmpty()
-  abstract category: string;
+  category: string;
 }
