@@ -1,15 +1,10 @@
-import { Content } from '@application/entities/content';
-import { Notification } from '@application/entities/notification';
+import { makeNotification } from '@test/factories/make-notification';
 import { InMemoryNotificationsRepository } from '@test/repositories/in-memory-repository';
 import { CountRecipientNotifications } from './count-notifications';
 
 describe('Count Recipient Notification', () => {
   it('should be able to count recipient notification', async () => {
-    const notification = new Notification({
-      content: new Content('notification content'),
-      category: 'notification category',
-      recipientId: 'notification recipient',
-    });
+    const notification = makeNotification();
     const notificationsRepository = new InMemoryNotificationsRepository();
     await notificationsRepository.create(notification);
     await notificationsRepository.create(notification);
