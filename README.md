@@ -69,10 +69,11 @@ npm test
 The service defines the following API endpoints:
 
 - POST `/notifications` - Create a new notification
-- GET `/notifications/:userId` - List all notifications for a user
-- PATCH `/notifications/:id/read` - Mark a notification as read
-- PATCH `/notifications/:id/unread` - Mark a notification as unread
-- DELETE `/notifications/:id` - Cancel a notification
+- GET `/notifications/to/:recipientId` - List all notifications sended to user
+- GET `/notifications/to/:recipientId/count` - Count all notifications sended to user
+- PATCH `/notifications/:notificationId/read` - Mark a notification as read
+- PATCH `/notifications/:notificationId/unread` - Mark a notification as unread
+- PATCH `/notifications/:notificationId/cancel` - Cancel a notification already sended
 
 ## Contributing
 
