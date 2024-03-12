@@ -1,3 +1,4 @@
+import { Content } from '@application/entities/content';
 import { Injectable } from '@nestjs/common';
 import { Notification } from 'src/application/entities/notification';
 import { NotificationsRepository } from 'src/application/repository/notifications-repository';
@@ -11,5 +12,28 @@ export class PrismaNotificationsRepository implements NotificationsRepository {
   async create(notification: Notification) {
     const data = PrismaNotificationMapper.map(notification);
     await this.prismaService.notification.create({ data });
+  }
+
+  async findById(notificationId: string) {
+    // const notification = await this.prismaService.notification.findUnique({
+    //   where: {
+    //     id: notificationId,
+    //   },
+    // });
+    // if (!notification) return null;
+
+    return new Notification({
+      content: new Content('sdfsfdsfsd'),
+      category: '',
+      recipientId: notificationId,
+    });
+  }
+
+  async update(notification: Notification) {
+    const data = PrismaNotificationMapper.map(notification);
+    await this.prismaService.notification.update({
+      where: { id: notification.id },
+      data,
+    });
   }
 }
